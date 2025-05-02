@@ -1,0 +1,48 @@
+[tool.ruff]
+# Select the rules Ruff should enforce. "E" and "F" are pyflakes/pycodestyle errors.
+# Add more rule sets as needed (e.g., "I" for isort import sorting).
+select = ["E", "F", "W", "I"] # E=Error, F=Pyflakes, W=Warning, I=isort
+
+# Ignore certain errors if necessary (e.g., line too long if unavoidable)
+# ignore = ["E501"]
+
+# Set the maximum line length
+line-length = 88
+
+# Specify the target Python version
+target-version = "py310" # Match your Python 3.10
+
+# Exclude directories like the virtual environment
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+[tool.ruff.format]
+# Use black-compatible formatting.
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+# Configure import sorting
+known-first-party = ["nexusflow"] # Tell isort our own code belongs here
